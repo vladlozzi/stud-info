@@ -1,0 +1,137 @@
+	input.numeric { text-align: end; }
+	span.fontbold { font-weight: bold; }
+	table {
+		width: 50%; /* Ширина таблиці */
+		margin-left: auto; margin-right: auto; /* Таблиця по центру*/
+		border: 2px double black; /* Рамка навколо таблиці */
+		border-collapse: collapse; /* Відображати тільки одинарні лінії */
+  }
+	th { 
+		text-align: center; /* Вирівнювання по центру */
+		background: #ccc; /* Колір фону клітинок */
+		padding: 2px; /* Поля навколо вмісту клітинок */
+		border: 1px solid black; /* Межі навколо клітинок */
+  }
+	td { 
+		vertical-align: top; /* Вертикальне вирівнювання згори  */
+		text-align: center; /* Вирівнювання по центру */
+		padding: 2px; /* Поля навколо вмісту клітинок */
+		border: 1px solid black; /* Межі навколо клітинок */
+  }
+	/* Кнопка "Детальніше" */
+  	.del { display: none; }
+	.del:not(:checked) + label + * { display: none; }
+	/* вигляд CSS кнопки */
+	.del:not(:checked) + label, .del:checked + label {
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 2px;
+		color: white;
+		background: grey;
+		cursor: pointer;
+	}
+	.del:checked + label {
+		color: black;
+		background: silver;
+	}
+	/* Таблиця з вертикальним скролом */
+	.scrolling-table {
+		border-collapse: collapse;
+		width: 1000px;
+		border: 1px solid;
+  }
+	.scrolling-table th {
+		border-bottom: 1px solid;
+		border-right: 1px solid;
+		border-left: 1px solid;
+		border-top: 1px solid;
+  }
+	.scrolling-table tr td {
+		border-left: 1px solid;
+		border-top: 1px solid;
+		border-right: 1px solid;
+		border-bottom: 1px solid;
+		text-align: center;
+  }
+	.scrolling-table tr td:first-child {
+		width: 40px; 
+  }
+	.scrolling-table tr th:first-child {
+		width: 40px; 
+  }
+	.scrolling-table tr td:last-child {
+		width: 90px; 
+  }
+	.scrolling-table tr th:last-child {
+		width: 90px; 
+  }
+	.scrolling-table thead {
+		width: 998px; 
+  }
+	.scrolling-table tbody {
+		display: block;
+		height: 405px;
+		width: 998px; 
+		overflow: hidden;
+		overflow-y: scroll;
+  }
+	.scrolling-table tfoot {
+		width: 998px; 
+  }
+	.scrolling-table thead tr {
+		background: none;
+		width: 998px;
+		display: table;
+		table-layout: fixed;
+  }
+	.scrolling-table tbody tr {
+		background: none;
+		width: 998px;
+		display: table;
+		table-layout: fixed;
+  }
+	.scrolling-table tfoot tr {
+		background: none;
+		width: 998px;
+		display: table;
+		table-layout: fixed;
+  }
+	/* Ховаємо реальний чекбокс */
+	.checkbox {
+   	display: none;
+	}
+	/* Задаємо вигляд для кастомного чекбокса */
+	.checkbox-custom {
+   	 position: relative; /* Обов'язково задаємо, щоби позиціонувати 
+										псевдоелемент всередині кастомного чекбокса */
+    width: 20px;           /* Обов'язково задаємо ширину */
+	  height: 20px;          /* Обов'язково задаємо висоту */
+    border: 2px solid #ccc;
+	  border-radius: 3px;
+	}
+	/* Кастомний чекбокс і лейбл центруємо по вертикалі. display: inline-block обов'язкове */
+	.checkbox-custom,	.label {
+   	 display: inline-block;
+	    vertical-align: middle;
+	}
+/* Якщо реальний чекбокс позначено, то додаємо цю ознаку до кастомного чекбокса */
+	.checkbox:checked + .checkbox-custom::before {
+		content: ""; /* Додаємо наш псевдоелемент */
+		display: block; position: absolute;
+		top: 2px; right: 2px; bottom: 2px; left: 2px;
+		background: red; border-radius: 1px;
+	}
+	.blink {
+		animation: blink-animation 1s steps(5, start) infinite;
+		-webkit-animation: blink-animation 1s steps(5, start) infinite;
+	}
+	@keyframes blink-animation {
+		to {
+			visibility: hidden;
+		}
+	}
+	@-webkit-keyframes blink-animation {
+		to {
+			visibility: hidden;
+		}
+	}
